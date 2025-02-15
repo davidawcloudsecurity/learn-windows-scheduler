@@ -47,7 +47,7 @@ This will schedule your computer to shut down at the time you specify.
 Alternatively, you can create the scheduled task from the **Command Prompt** by using the `schtasks` command. Here's an example:
 
 ```cmd
-schtasks /create /tn "ShutdownComputer" /tr "shutdown /s /f /t 0" /sc once /st 14:30
+schtasks /create /tn "ShutdownComputer" /tr "shutdown /s /f /t 0" /sc once /st 14:30 /ru "SYSTEM" /f
 ```
 
 This command will create a task named "ShutdownComputer" that will execute the shutdown command at **2:30 PM**.
@@ -62,7 +62,7 @@ You can change the time in the `"/st"` argument to the specific time you want to
 The command you provided will create a scheduled task named **"CostSavingsShutdownComputer01"** to shut down the computer at **14:30 (2:30 PM)**. Here's a breakdown of the command:
 
 ```cmd
-schtasks /create /tn "CostSavingsShutdownComputer01" /tr "shutdown /s /f /t 0" /sc once /st 14:30
+schtasks /create /tn "CostSavingsShutdownComputer01" /tr "shutdown /s /f /t 0" /sc once /st 14:30 /ru "SYSTEM" /f
 ```
 
 ### Explanation of the Command:
@@ -107,7 +107,7 @@ Here’s how you can set it up for **daily** shutdown at **14:30 (2:30 PM)**:
 ### Command for Daily Shutdown:
 
 ```cmd
-schtasks /create /tn "CostSavingsShutdownComputer01" /tr "shutdown /s /f /t 0" /sc daily /st 14:30
+schtasks /create /tn "CostSavingsShutdownComputer01" /tr "shutdown /s /f /t 0" /sc daily /st 18:00 /ru "SYSTEM" /f
 ```
 
 ### Breakdown of the Command:
